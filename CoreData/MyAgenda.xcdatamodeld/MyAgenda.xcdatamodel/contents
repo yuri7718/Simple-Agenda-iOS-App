@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="18F2059" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AgendaDate" representedClassName="AgendaDate" syncable="YES">
+        <attribute name="agendaDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="hasEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AgendaEvent" inverseName="scheduledOn" inverseEntity="AgendaEvent"/>
+    </entity>
+    <entity name="AgendaEvent" representedClassName="AgendaEvent" syncable="YES">
+        <attribute name="eventDescription" optional="YES" attributeType="String"/>
+        <attribute name="eventTitle" optional="YES" attributeType="String"/>
+        <relationship name="scheduledOn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgendaDate" inverseName="hasEvents" inverseEntity="AgendaDate"/>
+    </entity>
+    <elements>
+        <element name="AgendaDate" positionX="258.671875" positionY="-50.640625" width="128" height="73"/>
+        <element name="AgendaEvent" positionX="-63" positionY="-18" width="128" height="88"/>
+    </elements>
+</model>
